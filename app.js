@@ -9,7 +9,8 @@ let data = {
 
 app.get("/", (req, res) =>{
   
-  res.send(JSON.stringify(data)||"hi")
+  
+  res.json(data||{})
 })
 
 app.post("/", async (req, res) =>{
@@ -21,5 +22,7 @@ app.post("/", async (req, res) =>{
 const PORT =  3000
 app.listen(PORT, () =>{
   console.log(`server up and running on port${PORT}`)
+  console.log("stringified: ",JSON.stringify(data))
 })
 
+ 
