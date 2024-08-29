@@ -3,17 +3,19 @@ const express = require("express")
 const app = express()
 
 app.use(express.urlencoded({extended: true}))
-let data;
+let data = {
+  "name": "abhay"
+};
 
 app.get("/", (req, res) =>{
   
-  res.send(data||"hi")
+  res.send(JSON.stringify(data)||"hi")
 })
 
 app.post("/", async (req, res) =>{
   
    data = await req.body;
-  res.redirect("/")
+    res.redirect("/")
 })
 
 const PORT =  3000
