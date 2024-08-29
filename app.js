@@ -3,13 +3,16 @@ const express = require("express")
 const app = express()
 
 app.use(express.urlencoded({extended: true}))
+let data;
 
 app.get("/", (req, res) =>{
-  res.send("hi")
+  
+  res.send(data||"hi")
 })
 
 app.post("/", (req, res) =>{
-  console.log(req)
+  console.log(req.body)
+  data = req.body
   res.redirect("/")
 })
 
