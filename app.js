@@ -10,9 +10,9 @@ app.get("/", (req, res) =>{
   res.send(data||"hi")
 })
 
-app.post("/", (req, res) =>{
-  console.log(req.body)
-  data = req.body
+app.post("/", async (req, res) =>{
+  
+   data = await req.body;
   res.redirect("/")
 })
 
