@@ -11,6 +11,8 @@ let data = {
   "name": ["abhay", "anshul"]
 };
 
+
+
 app.get("/api", (req, res) =>{
   
   res.json(data)
@@ -19,8 +21,8 @@ app.get("/api", (req, res) =>{
 app.post("/api", async (req, res) =>{
   
   data = await req.body;
-  res.redirect("/")
-})
+  res.redirect("/api")
+}) 
 
 const PORT =  5000
 app.listen(PORT, () =>{
